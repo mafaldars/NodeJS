@@ -1,0 +1,63 @@
+{{#with contact}}
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title">{{ name }}</h5>
+                </div>
+
+                <div class="card-body row">
+                    <div class="col-4">
+                        {{#with photo }}
+                            <img src="/uploads/{{ this }}" width="100%" class="img-thumbnail">
+                            <a href="/uploads/{{ this }}" class="btn btn-sm btn-secondary">Download</a>
+                        {{/with }}
+                    </div>
+                    <div class="col-8">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <strong>Email</strong> {{ email }}
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Phone</strong> {{ phone }}
+                            </li>
+                            <li class="list-group-item">
+                                <strong>Age</strong> {{ age }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card-footer">
+                    <a href="/contacts/{{ _id }}/form" class="btn btn-sm btn-outline-primary">Edit</a>
+                    <a href="/contacts/{{ _id }}/delete" onclick="return confirm('Remove?')" class="btn btn-sm btn-outline-danger">Remove</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <form class="card" method="post" action="/contacts/{{ _id }}/send">
+                <div class="card-header">
+                    <h5 class="card-title">Send message</h5>
+                </div>
+
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label for="subjectInput" class="form-label">Subject</label>
+                        <input type="text" class="form-control" id="subjectInput" placeholder="Subject for your message" name="subject">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="messageInput" class="form-label">Message</label>
+                        <textarea class="form-control" id="subjectInput" placeholder="Your message" rows="5" name="message"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-sm btn-outline-primary">Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{{/with}}

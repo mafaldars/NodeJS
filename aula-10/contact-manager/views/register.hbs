@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NJS Contact Manager - Register</title>
+    <link href="/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      #usernameInput, #emailInput {
+          border-radius: 0;
+      }
+      #usernameInput {
+          border-top: none;
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="/styles/signin.css" rel="stylesheet">
+  </head>
+  
+  <body class="text-center">
+    
+    <main class="form-signin">
+        <form method="post">
+            <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
+            <label for="nameInput" class="visually-hidden">Name</label>
+            <input type="text" id="nameInput" class="form-control" placeholder="Name" name="name">
+            
+            <label for="emailInput" class="visually-hidden">Email</label>
+            <input type="email" id="emailInput" class="form-control" placeholder="Email" name="email">
+            
+            <label for="usernameInput" class="visually-hidden">Username</label>
+            <input type="text" id="usernameInput" class="form-control" placeholder="Username" name="username">
+            
+            <label for="inputPassword" class="visually-hidden">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password">
+            
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign Up</button>
+
+            <a href="/auth/login" class="btn mt-4">Already have account</a>
+
+            <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
+        </form>
+    </main>    
+  </body>
+</html>

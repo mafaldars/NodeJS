@@ -1,0 +1,35 @@
+<form method="post" class="card" enctype="multipart/form-data">
+    <div class="card-header">
+        <h5 class="card-title">Create Contact</h5>
+    </div>
+
+    <div class="card-body">
+        <div class="mb-3">
+            <label for="nameInput" class="form-label">Name</label>
+            <input type="text" class="form-control" name="name" id="nameInput" required autofocus value="{{#with contact}}{{ name }}{{/with}}">
+        </div>
+        <div class="mb-3">
+            <label for="emailInput" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="emailInput" required value="{{#with contact}}{{ email }}{{/with}}">
+        </div>
+        <div class="mb-3">
+            <label for="phoneInput" class="form-label">Phone</label>
+            <input type="tel" class="form-control" name="phone" id="phoneInput" value="{{#with contact}}{{ phone }}{{/with}}">
+        </div>
+        <div class="mb-3">
+            <label for="birthdayInput" class="form-label">Birthday</label>
+            <input type="date" class="form-control" name="birthday" id="birthdayInput" value="{{#with contact}}{{ birthday }}{{/with}}">
+        </div>
+        <div class="mb-3">
+            <label for="photoFile" class="form-label">Photo</label>
+            <input class="form-control" type="file" id="photoFile" accept=".jpg,.png,.jpeg" name="image">
+            {{#with contact.photo}}
+                <img src="/uploads/{{ this }}" class="img-thumbnail mt-2" width="200" class="mt-2">
+            {{/with}}
+        </div>
+    </div>
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-sm btn-outline-primary">Save</button>
+    </div>
+</form>
